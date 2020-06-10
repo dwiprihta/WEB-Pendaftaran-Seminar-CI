@@ -1,0 +1,291 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 20 Mar 2019 pada 06.16
+-- Versi Server: 10.1.10-MariaDB
+-- PHP Version: 5.6.19
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sipt`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_dosen`
+--
+
+CREATE TABLE `tbl_dosen` (
+  `nidn` int(20) NOT NULL,
+  `nama_dosen` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_dosen`
+--
+
+INSERT INTO `tbl_dosen` (`nidn`, `nama_dosen`) VALUES
+(67897653, 'Cicilia Puji Rahayu S.Si., M.Sc.'),
+(682926325, 'Agus Rianto., S.T., M.T.'),
+(2147483647, 'Hendri Noviyanto., S.T, M.T');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_kp`
+--
+
+CREATE TABLE `tbl_kp` (
+  `npm` int(20) NOT NULL,
+  `no_daftar` int(10) NOT NULL,
+  `nama` varchar(60) NOT NULL,
+  `angkatan` int(4) NOT NULL,
+  `smt` int(2) NOT NULL,
+  `progdi` varchar(20) DEFAULT NULL,
+  `tgl_awal_kp` date NOT NULL,
+  `tgl_akhir_kp` date NOT NULL,
+  `tempat_kp` varchar(100) DEFAULT NULL,
+  `tgl_awal_konsul` date NOT NULL,
+  `tgl_akhir_konsul` date NOT NULL,
+  `judul_kp` varchar(100) NOT NULL,
+  `dosen` varchar(60) NOT NULL,
+  `periode` varchar(20) NOT NULL,
+  `berkas` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_kp`
+--
+
+INSERT INTO `tbl_kp` (`npm`, `no_daftar`, `nama`, `angkatan`, `smt`, `progdi`, `tgl_awal_kp`, `tgl_akhir_kp`, `tempat_kp`, `tgl_awal_konsul`, `tgl_akhir_konsul`, `judul_kp`, `dosen`, `periode`, `berkas`) VALUES
+(201223001, 5, 'HERMAYADI', 2012, 9, 'Sistem Komputer', '2018-08-01', '2018-09-04', 'MTS MUHAMMADIYAH SIDOHARJO', '2018-10-01', '2018-10-28', 'SISTEM INFORMASI PERPUSRAKAAN DI MTS MUHAMMADIYAH SIDOHARJO SOLO', 'Cicilia Puji Rahayu S.Si., M.Sc.', '2017/2018', 'HERMAYADI_(201223001).zip'),
+(201323013, 4, 'BUDHIARTO', 2013, 12, 'Sistem Komputer', '2018-10-04', '2018-10-11', 'KANTOR KELURAHAN DESA KROYO', '2018-10-31', '2018-10-11', 'APLIKASI MANAJEMEN SURAT BERBASIS VB 6.0', 'Cicilia Puji Rahayu S.Si., M.Sc.', '2015/2016', 'BUDIHARTO_(201323013).zip'),
+(201423004, 2, 'ASTUTI WULANDARI', 2014, 8, 'Sistem Komputer', '2018-11-01', '2018-11-09', 'KANTOR KELURAHAN DESA PAPAHAN', '2018-11-12', '2018-11-29', 'SISTEM INFORMASI PENGANTAR SURAT BERBASIS VB.6', 'Agus Rianto., S.T., M.T.', '2017/2018', 'ASTUTI_(201423004).zip'),
+(201423009, 3, 'KRISTIFORUS VINSEN MARIAN', 2014, 8, 'Sistem Komputer', '2018-11-14', '2018-11-22', 'KANTOR KELURAHAN DSA NGRINGO', '2018-11-16', '2018-11-07', 'SISTEM INFORMASI DATA PENDUDUK BERBASIS VB NET', 'Cicilia Puji Rahayu S.Si., M.Sc.', '2017/2018', 'KRISTOFORUS_(201423009).zip'),
+(201423013, 1, 'IBNU MAHFUDIN', 2014, 8, 'Sistem Komputer', '2018-11-09', '2018-11-15', 'KANTOR KELURAHAN DESA MAJENANG', '2018-11-30', '2018-11-09', 'APLIKASI SURAT PENGANTAR BERBSIS VB.60', 'Cicilia Puji Rahayu S.Si., M.Sc.', '2017/2018', 'IBNU_(201423013).zip');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_mhs`
+--
+
+CREATE TABLE `tbl_mhs` (
+  `nim` varchar(20) NOT NULL,
+  `nama_mhs` varchar(50) NOT NULL,
+  `jenkal` varchar(10) NOT NULL,
+  `jurusan` varchar(30) NOT NULL,
+  `angkatan` int(6) NOT NULL,
+  `tempat_lahir` varchar(60) NOT NULL,
+  `tgl_lahir` date NOT NULL,
+  `kontak` varchar(60) NOT NULL,
+  `alamat` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_mhs`
+--
+
+INSERT INTO `tbl_mhs` (`nim`, `nama_mhs`, `jenkal`, `jurusan`, `angkatan`, `tempat_lahir`, `tgl_lahir`, `kontak`, `alamat`) VALUES
+('1201523001', 'ADIGUNA SANJAYA', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'SUKOHARJO', '2019-01-07', '089777888999', 'SUKOHARJO'),
+('1201523002', 'ALFATH QUMARA', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'Wonogiri', '2019-02-14', '08977788999', 'BOYOLALI'),
+('1201523005', 'DWI PRIHTAPAMBUDI', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'KARANGANYAR', '2018-04-09', '0823836233', 'KAEANGANYAR'),
+('1201523006', 'EKO HARDIYANTO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'PACITAN', '2013-10-18', '0897788998', 'SOLO'),
+('1201523008', 'INDRI DWI S', 'PEREMPUAN', 'SISTEM KOMPUTER', 2015, 'SUOHARJO', '2019-02-25', '08977766655', 'SUKOHARJO'),
+('1201523009', 'REZA GUNAWAN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'NABIRE', '2019-02-24', '0899990000', 'SUKOHAARJO'),
+('1201523011', 'MUHAMMAD IMAM NASUKHA', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'SRAGEN', '2019-03-06', '0897788998', 'SRAGEN'),
+('1201523015', 'TUTUT PRASETYO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'KARANGANYAR', '2019-01-19', '0896151412', 'KARANGANYAR'),
+('1201523016', 'VALENDIO TEGAR PAMBUDI', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'WONOGIRI', '2019-03-05', '08977766655', 'WOWNOGIRI'),
+('1201523017', 'LUBIS TEGUH PAMBUDI', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2015, 'SRAGEN', '2019-03-04', '0897788998', 'SRAGEN'),
+('12016230002', 'DZAKI FADLURAHMAN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SOLO', '2019-03-03', '08977766655', 'SOLO'),
+('1201623001', 'AFRIZAL FIRMANDA', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SUOHARJO', '2019-03-03', '0897788998', 'SUKOHARJO'),
+('1201623004', 'JALU AJI NURSETO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'KARANGANYAR', '2018-06-04', '0897788998', 'KARANGANYAR'),
+('1201623006', 'PANDU LEGOWO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SOLO', '2019-03-04', '08977766655', 'SOLO'),
+('1201623008', 'RAVINDO BAGUS S', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SOLO', '2017-02-07', '08977766655', 'SOLO'),
+('1201623009', 'RONY SETIYANTO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'KARANGANYAR', '2019-03-05', '08977766655', 'SOLO'),
+('1201623010', 'TRIYANTO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SOLO', '2019-03-04', '08977766655', 'SOLO'),
+('1201623011', 'DANANG DWI YULIANTO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'KARANGANYAR', '2019-03-12', '08977766655', 'KARANGANYAR'),
+('1201623012', 'INDARTO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SRAGEN', '2019-01-05', '08977766655', 'SRAGEN'),
+('1201623013', 'LILIK AYATULAH HUDIN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SRAGEN', '2019-03-04', '08977766655', 'SRAGEN'),
+('1201623014', 'ONKY VENDI PARATANA', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SOLO', '2019-03-05', '08977766655', 'SOLO'),
+('1201623015', 'ROHMAT ALVIYAN UTOMO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'SRAGEN', '2019-03-05', '08977766655', 'SRAGEN'),
+('1201623016', 'BAGAS SETIYADI GUNAWAN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2016, 'KARANGANYAR', '2019-03-05', '08977766655', 'KARANGANYAR'),
+('1201723001', 'BAYU ARIYA TAMA', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2017, 'SOLO', '2019-03-05', '08977766655', 'SOLO'),
+('1201723002', 'BURHANUDIN HARAHAP', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2017, 'KARANGANYAR', '2019-03-07', '08977766655', 'KARANGANYAR'),
+('1201723005', 'GUNTUR WICAKSONO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2017, 'KALIMANTAN', '2019-03-04', '08977766655', 'SOLO'),
+('1201723006', 'MUHAMMAD NUZUL RAMDAN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2017, 'PANGKALAN BUN', '2019-03-05', '08977766655', 'KARANGANYAR'),
+('1201723007', 'RIZKY SAIFUL HIDAYAT', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2017, 'SOLO', '2019-03-07', '08977766655', 'SOLO'),
+('1201723008', 'FURQON AL HAKIM', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2017, 'SRAGEN', '2019-03-11', '08977766655', 'SRAGEN'),
+('201423002', 'GUNTUR HARYO WICAKSONO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'NGAWI', '2019-03-01', '08977766655', 'NGAWI'),
+('201423004', 'IBNU MAHFUDIN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'SRAGEN', '2019-03-05', '08977766655', 'SRAGEN'),
+('201423005', 'DHIMAS SETIADI GUNAWAN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'SOLO', '2019-02-26', '08977766655', 'SOLO'),
+('201423006', 'SUKARTON TRISNO SAPUTRO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'NGAWI', '2019-02-26', '08977766655', 'NGAWI'),
+('201423010', 'DIKI AGUNG MAHARDIKA', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'SOLO', '2019-02-27', '0823836233', 'SOLO'),
+('201423011', 'SUGIYANTO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'KARANGANYAR', '2019-03-04', '0897788998', 'KARANGANYAR'),
+('201423012', 'JOKO PRAMONO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'KARANGANYAR', '2019-02-26', '0897788998', 'KARANGANYAR'),
+('201423014', 'ASTUTI WULANDARI', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'KARANGANYAR', '2019-02-28', '08977766655', 'KARANGANYAR'),
+('201423015', 'AGUS STYAWAN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'KARANGANYAR', '2019-02-27', '08977766655', 'KARANGANYAR'),
+('201423018', 'RONI PRASETYO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'SRAGEN', '2019-02-24', '08977766655', 'SRAGEN'),
+('201423019', 'SUPARTONO', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'NGAWI', '2019-02-27', '0897788998', 'NGAWI'),
+('201423020', 'ALI ZAINAL ABIDIN', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'SOLO', '2019-03-01', '08977766655', 'SOLO'),
+('201423021', 'DANANG WINDY WIRATAMA', 'LAKI-LAKI', 'SISTEM KOMPUTER', 2014, 'BLORA', '2019-02-26', '08977766655', 'BLORA');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_periode`
+--
+
+CREATE TABLE `tbl_periode` (
+  `id` int(11) NOT NULL,
+  `periode` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_periode`
+--
+
+INSERT INTO `tbl_periode` (`id`, `periode`) VALUES
+(12, '2014/2015 GANJIL'),
+(13, '2014/2015 GENAP'),
+(14, '2015/2016 GANJIL'),
+(15, '2015/2016 GENAP'),
+(16, '2016/2017 GANJIL'),
+(17, '2016/2017 GENAP'),
+(18, '2017/2018 GANJIL'),
+(19, '2017/2018 GENAP');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `npm` int(10) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `level` varchar(15) NOT NULL,
+  `notif` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`npm`, `username`, `password`, `email`, `level`, `notif`) VALUES
+(123, 'admin', 'admin321', 'dwi@gmail.com', 'admin', ''),
+(1201523001, 'dwi', 'dwi123', 'prihta1996@gmail.com', 'user', '<p><strong>BELUM ADA PENGUMUMAN</strong></p>'),
+(1201523005, 'tutut', 'tutut123', 'tutut@rocketmail.com', 'user', '<p><strong>BELUM ADA PENGUMUMAN</strong></p>');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_admin`
+--
+CREATE TABLE `v_admin` (
+`npm` int(10)
+,`username` varchar(50)
+,`password` varchar(50)
+,`email` varchar(50)
+,`level` varchar(15)
+,`notif` varchar(1000)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `v_user`
+--
+CREATE TABLE `v_user` (
+`npm` int(10)
+,`username` varchar(50)
+,`password` varchar(50)
+,`email` varchar(50)
+,`level` varchar(15)
+,`notif` varchar(1000)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `v_admin`
+--
+DROP TABLE IF EXISTS `v_admin`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_admin`  AS  select `tbl_user`.`npm` AS `npm`,`tbl_user`.`username` AS `username`,`tbl_user`.`password` AS `password`,`tbl_user`.`email` AS `email`,`tbl_user`.`level` AS `level`,`tbl_user`.`notif` AS `notif` from `tbl_user` where (`tbl_user`.`level` = 'admin') ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `v_user`
+--
+DROP TABLE IF EXISTS `v_user`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_user`  AS  select `tbl_user`.`npm` AS `npm`,`tbl_user`.`username` AS `username`,`tbl_user`.`password` AS `password`,`tbl_user`.`email` AS `email`,`tbl_user`.`level` AS `level`,`tbl_user`.`notif` AS `notif` from `tbl_user` where (`tbl_user`.`level` = 'user') ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_dosen`
+--
+ALTER TABLE `tbl_dosen`
+  ADD PRIMARY KEY (`nidn`);
+
+--
+-- Indexes for table `tbl_kp`
+--
+ALTER TABLE `tbl_kp`
+  ADD PRIMARY KEY (`npm`),
+  ADD KEY `pembimbing` (`dosen`),
+  ADD KEY `daftar` (`no_daftar`);
+
+--
+-- Indexes for table `tbl_mhs`
+--
+ALTER TABLE `tbl_mhs`
+  ADD PRIMARY KEY (`nim`);
+
+--
+-- Indexes for table `tbl_periode`
+--
+ALTER TABLE `tbl_periode`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`npm`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_kp`
+--
+ALTER TABLE `tbl_kp`
+  MODIFY `no_daftar` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `tbl_periode`
+--
+ALTER TABLE `tbl_periode`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
